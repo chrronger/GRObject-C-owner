@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  GRObject-C-owner
+//
+//  Created by sen on 2016/9/23.
+//  Copyright © 2016年 sen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+/******************** log ***********************/
+#if DEBUG
+
+#define GRLog(FORMAT, ...) fprintf(stderr, "[%s:%d行] %s\n", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#else
+
+#define GRLog(FORMAT, ...) nil
+
+#endif
+
+
+#import "NSString+Extension.h"
+#import "UIView+Extension.h"
+#import <UIKit/UIKit.h>
+
+
+
+#endif /* PrefixHeader_pch */
