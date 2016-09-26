@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62F88801D9907B90094430A /* NSObject+JudgeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */; };
 		A69EF6711D93D3E700DDF4BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A69EF6701D93D3E700DDF4BF /* main.m */; };
 		A69EF6741D93D3E700DDF4BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69EF6731D93D3E700DDF4BF /* AppDelegate.m */; };
 		A69EF6771D93D3E700DDF4BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69EF6761D93D3E700DDF4BF /* ViewController.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A62F887E1D9907B90094430A /* NSObject+JudgeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JudgeNull.h"; sourceTree = "<group>"; };
+		A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JudgeNull.m"; sourceTree = "<group>"; };
 		A69EF66C1D93D3E700DDF4BF /* GRObject-C-owner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GRObject-C-owner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69EF6701D93D3E700DDF4BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A69EF6721D93D3E700DDF4BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 		A69EF6A81D94C75900DDF4BF /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A62F887E1D9907B90094430A /* NSObject+JudgeNull.h */,
+				A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */,
 				A69EF6B21D94D25000DDF4BF /* UIImage+Extension.h */,
 				A69EF6B31D94D25000DDF4BF /* UIImage+Extension.m */,
 				A6CD98721D9508ED0062D379 /* NSDate+Extension.h */,
@@ -429,6 +434,7 @@
 				A69EF6711D93D3E700DDF4BF /* main.m in Sources */,
 				A6CD988B1D9509020062D379 /* UIView+Extension.m in Sources */,
 				A6CD988C1D9509020062D379 /* UIView+gesture.m in Sources */,
+				A62F88801D9907B90094430A /* NSObject+JudgeNull.m in Sources */,
 				A6CD987C1D9508ED0062D379 /* NSDate+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
