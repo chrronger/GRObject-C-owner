@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GRJudgeVPN.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    BOOL vpn = [GRJudgeVPN isVPNConnected];
+    NSLog(@"%d",vpn);
     return YES;
 }
 
