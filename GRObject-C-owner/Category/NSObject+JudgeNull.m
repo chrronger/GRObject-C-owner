@@ -12,29 +12,10 @@
 //判断对象是否为空
 - (BOOL)isNull
 {
-    if ([self isEqual:[NSNull null]])
+     if(self.length ==  0 || [self isKindOfClass:[NSNull class]] || self == nil || self == NULL || [self isEqualToString:@"(null)"] || [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0 || [self isEqualToString:@"null"])
     {
-        return YES;
+        return NO;
     }
-    else
-    {
-        if ([self isKindOfClass:[NSNull class]])
-        {
-            return YES;
-        }
-        else
-        {
-            if (self==nil)
-            {
-                return YES;
-            }
-        }
-    }
-    if ([self isKindOfClass:[NSString class]]) {
-        if ([((NSString *)self) isEqualToString:@"(null)"]) {
-            return YES;
-        }
-    }
-    return NO;
+    return YES;
 }
 @end
