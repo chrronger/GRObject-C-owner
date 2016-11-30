@@ -1,5 +1,9 @@
 #import "Network.h"
 
+#import "AFNetworkActivityIndicatorManager.h"
+
+NSString *const LOGINURL= @"NetWorkDidChangeNotification";
+
 #define BASE_URL @""
 #define TIMEOUT 60
 
@@ -22,12 +26,52 @@
     return _HWNetworkRequest;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        // 网络状态监听
+        [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
+                //NSLog(@"有网络");
+                [[NSNotificationCenter defaultCenter] postNotificationName:NetWorkDidChangeNotification object:nil userInfo:@{@"status": [NSNumber numberWithBool:true]}];
+            } else {
+               // NSLog(@"无网络");
+                [[NSNotificationCenter defaultCenter] postNotificationName:NetWorkDidChangeNotification object:nil userInfo:@{@"status": [NSNumber numberWithBool:false]}];
+            }
+        }];
+    }
+    return self;
+}
+
+
+
+- (void)startMonitor
+{
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+- (void)stopMonitor
+{
+    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+}
+
+- (BOOL)isHaveNetwork
+{
+    AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    //
+    if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
+        return true;
+    }
+    return false;
+}
+
 - (AFHTTPSessionManager *)manager
 {
     if (_manager == nil) {
         if (BASE_URL) {
            _manager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:BASE_URL]];
         }
+       // _manager.requestSerializer = [AFJSONRequestSerializer serializer];
         _manager.responseSerializer = [AFJSONResponseSerializer serializer];
         _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html",@"text/xml", nil];
         
