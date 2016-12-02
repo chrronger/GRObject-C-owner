@@ -2,7 +2,7 @@
 
 #import "AFNetworkActivityIndicatorManager.h"
 
-NSString *const LOGINURL= @"NetWorkDidChangeNotification";
+NSString *const NetWorkDidChangeNotification= @"NetWorkDidChangeNotification";
 
 #define BASE_URL @""
 #define TIMEOUT 60
