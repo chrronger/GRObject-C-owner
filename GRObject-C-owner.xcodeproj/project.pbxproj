@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0080E4271EEE9194001684E2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0080E4261EEE9194001684E2 /* UIColor+Extension.swift */; };
 		A62F88801D9907B90094430A /* NSObject+JudgeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */; };
 		A63586541DE98C4E000FD636 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = A63586341DE98C4E000FD636 /* Foundation+Log.m */; };
 		A63586551DE98C4E000FD636 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A63586371DE98C4E000FD636 /* NSDate+Extension.m */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0080E4251EEE9193001684E2 /* GRObject-C-owner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GRObject-C-owner-Bridging-Header.h"; path = "Category/GRObject-C-owner-Bridging-Header.h"; sourceTree = "<group>"; };
+		0080E4261EEE9194001684E2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A62F887E1D9907B90094430A /* NSObject+JudgeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JudgeNull.h"; sourceTree = "<group>"; };
 		A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JudgeNull.m"; sourceTree = "<group>"; };
 		A63586341DE98C4E000FD636 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -188,6 +191,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0080E4241EEE90E5001684E2 /* Swift extension */ = {
+			isa = PBXGroup;
+			children = (
+				0080E4261EEE9194001684E2 /* UIColor+Extension.swift */,
+			);
+			name = "Swift extension";
+			sourceTree = "<group>";
+		};
 		A63586331DE98C4E000FD636 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +261,7 @@
 		A69EF66E1D93D3E700DDF4BF /* GRObject-C-owner */ = {
 			isa = PBXGroup;
 			children = (
+				0080E4251EEE9193001684E2 /* GRObject-C-owner-Bridging-Header.h */,
 				A69EF6721D93D3E700DDF4BF /* AppDelegate.h */,
 				A69EF6731D93D3E700DDF4BF /* AppDelegate.m */,
 				A69EF6751D93D3E700DDF4BF /* ViewController.h */,
@@ -297,6 +309,7 @@
 		A69EF6A81D94C75900DDF4BF /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0080E4241EEE90E5001684E2 /* Swift extension */,
 				A63586331DE98C4E000FD636 /* Category */,
 				A62F887E1D9907B90094430A /* NSObject+JudgeNull.h */,
 				A62F887F1D9907B90094430A /* NSObject+JudgeNull.m */,
@@ -440,6 +453,7 @@
 					A69EF66B1D93D3E700DDF4BF = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3ZG7RQH8M7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A69EF6841D93D3E700DDF4BF = {
@@ -544,6 +558,7 @@
 				A635865C1DE98C4E000FD636 /* UIImage+Extension.m in Sources */,
 				A63586581DE98C4E000FD636 /* UIBarButtonItem+Extension.m in Sources */,
 				A635865A1DE98C4E000FD636 /* UIDevice+DeviceType.m in Sources */,
+				0080E4271EEE9194001684E2 /* UIColor+Extension.swift in Sources */,
 				A63586541DE98C4E000FD636 /* Foundation+Log.m in Sources */,
 				A6CD987C1D9508ED0062D379 /* NSDate+Extension.m in Sources */,
 			);
@@ -692,6 +707,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3ZG7RQH8M7;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GRObject-C-owner/PrefixHeader.pch";
 				INFOPLIST_FILE = "GRObject-C-owner/Info.plist";
@@ -699,6 +716,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sen.GRObject-C-owner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GRObject-C-owner/Category/GRObject-C-owner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -706,6 +726,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3ZG7RQH8M7;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GRObject-C-owner/PrefixHeader.pch";
 				INFOPLIST_FILE = "GRObject-C-owner/Info.plist";
@@ -713,12 +735,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sen.GRObject-C-owner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GRObject-C-owner/Category/GRObject-C-owner-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		A69EF69D1D93D3E800DDF4BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "GRObject-C-ownerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -731,6 +756,7 @@
 		A69EF69E1D93D3E800DDF4BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "GRObject-C-ownerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -743,6 +769,7 @@
 		A69EF6A01D93D3E800DDF4BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "GRObject-C-ownerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sen.GRObject-C-ownerUITests";
@@ -754,6 +781,7 @@
 		A69EF6A11D93D3E800DDF4BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "GRObject-C-ownerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sen.GRObject-C-ownerUITests";
